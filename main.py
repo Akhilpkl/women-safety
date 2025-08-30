@@ -4,12 +4,12 @@ from twilio.rest import Client
 app = Flask(__name__)
 
 # Twilio credentials
-ACCOUNT_SID = "AC4338d20823060c39939982516aa00c66"
-AUTH_TOKEN = "0c2e5b4e63220f21a2dd809312714656"
-TWILIO_PHONE = "+91755905338"         # Your Twilio phone number for SMS
-TWILIO_WHATSAPP = "whatsapp:+14155238886"  # Twilio Sandbox WhatsApp number
-EMERGENCY_CONTACT = "+917559053358"  # Replace with your verified number
-EMERGENCY_WHATSAPP = "whatsapp:+917559053358"
+ACCOUNT_SID = ""
+AUTH_TOKEN = ""
+TWILIO_PHONE = "+"         # Your Twilio phone number for SMS
+TWILIO_WHATSAPP = ""  # Twilio Sandbox WhatsApp number
+EMERGENCY_CONTACT = ""  # Replace with your verified number
+EMERGENCY_WHATSAPP = ""
 
 # Twilio client
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
