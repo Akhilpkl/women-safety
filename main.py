@@ -1,33 +1,60 @@
 from flask import Flask, render_template, request, jsonify
+from twilio.rest import Client
 
 app = Flask(__name__)
 
-# Home page
+# Twilio credentials
+ACCOUNT_SID = "AC4338d20823060c39939982516aa00c66"
+AUTH_TOKEN = "0c2e5b4e63220f21a2dd809312714656"
+TWILIO_PHONE = "+91755905338"         # Your Twilio phone number for SMS
+TWILIO_WHATSAPP = "whatsapp:+14155238886"  # Twilio Sandbox WhatsApp number
+EMERGENCY_CONTACT = "+917559053358"  # Replace with your verified number
+EMERGENCY_WHATSAPP = "whatsapp:+917559053358"
+
+# Twilio client
+client = Client(ACCOUNT_SID, AUTH_TOKEN)
+
 @app.route("/")
 def home():
     return render_template("home.html")
 
-# Login page
 @app.route("/login", methods=["GET", "POST"])
 def login():
     return render_template("loginpage.html")
 
-# SOS page
 @app.route("/sos")
 def sos():
-    return render_template("sos.html")   # 🚨 new SOS page
+    return render_template("sos.html")
 
-# API endpoint to receive SOS alerts
 @app.route("/send_sos", methods=["POST"])
 def send_sos():
     data = request.json
     latitude = data.get("lat")
     longitude = data.get("lon")
 
-    # For now just print the alert
-    print(f"🚨 SOS received! Location: {latitude}, {longitude}")
+    # Create alert message
+    message_text = f"🚨 SOS Alert!\nLocation: https://www.google.com/maps?q={latitude},{longitude}"
 
-    return jsonify({"status": "success", "message": "SOS alert received!"})
+    try:
+        # Send SMS
+        client.messages.create(
+            body=message_text,
+            from_=TWILIO_PHONE,
+            to=EMERGENCY_CONTACT
+        )
+
+        # Send WhatsApp
+        client.messages.create(
+            body=message_text,
+            from_=TWILIO_WHATSAPP,
+            to=EMERGENCY_WHATSAPP
+        )
+
+        print("✅ SOS sent via SMS & WhatsApp!")
+        return jsonify({"status": "success", "message": "SOS alert sent via SMS & WhatsApp!"})
+    except Exception as e:
+        print(f"❌ Error sending SOS: {e}")
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 
 if __name__ == "__main__":
