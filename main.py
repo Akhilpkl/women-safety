@@ -26,6 +26,10 @@ def login():
 def sos():
     return render_template("sos.html")
 
+@app.route("/resource")
+def resource():
+    return render_template("resource.html")
+
 @app.route("/send_sos", methods=["POST"])
 def send_sos():
     data = request.json
