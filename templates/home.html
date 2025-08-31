@@ -3,15 +3,139 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResQHer - Women Safety</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
-<body>
-    <h1>womensafety</h1>
-    <h1> HOME page under construction</h1>
-    <a href="{{ url_for('login') }}">
-        <button>Go to Login Page</button>
-    </a>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold text-indigo-700">ResQHer</h1>
+            <ul class="flex space-x-6 font-medium">
+                <li><a href="#home" class="hover:text-indigo-600">Home</a></li>
+                <li><a href="#about" class="hover:text-indigo-600">About</a></li>
+                <li><a href="#resources" class="hover:text-indigo-600">Resources</a></li>
+                <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  
+    <section id="home" class="pt-32 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white text-center px-6 py-20">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to ResQHer</h1>
+        <p class="text-lg md:text-xl mb-10">
+            Ensuring women’s safety with one-tap SOS, live location sharing & verified helpline numbers.
+        </p>
+
+       
+        <button
+            class="bg-red-600 hover:bg-red-700 px-12 py-5 rounded-full text-2xl font-bold shadow-lg transition transform hover:scale-105">
+            🚨 Send SOS Alert
+        </button>
+
+      
+        <div class="mt-12 flex flex-col md:flex-row justify-center gap-6">
+            <a href="#resources"
+                class="bg-white text-indigo-900 font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-indigo-100 transition">
+                📍 Live Location
+            </a>
+            <a href="#resources"
+                class="bg-white text-indigo-900 font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-indigo-100 transition">
+                ☎️ Helpline Numbers
+            </a>
+            <a href="#resources"
+                class="bg-white text-indigo-900 font-semibold px-8 py-4 rounded-xl shadow-md hover:bg-indigo-100 transition">
+                🛡 Safety Resources
+            </a>
+        </div>
+    </section>
+
+   
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-6">About ResQHer</h2>
+            <p class="text-lg max-w-3xl mx-auto text-gray-600 leading-relaxed">
+                ResQHer is a dedicated women’s safety platform designed to provide quick, reliable,
+                and accessible support in times of need. With features like <strong>one-tap SOS alerts</strong>,
+                <strong>real-time live location sharing</strong>, and <strong>verified helpline numbers</strong>,
+                our mission is to ensure that help is always just a click away.
+            </p>
+            <p class="text-lg max-w-3xl mx-auto text-gray-600 mt-4 leading-relaxed">
+                We believe safety is not just a privilege—it’s a <strong>basic right</strong>. ResQHer is more
+                than just an app; it’s a <strong>digital companion</strong> that empowers women with confidence
+                and peace of mind, whether they’re traveling, working late, or simply stepping out alone.
+            </p>
+        </div>
+    </section>
+
+  
+    <section id="resources" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-6">Safety Resources</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-white shadow-md rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-3">📍 Live Location</h3>
+                    <p class="text-gray-600 mb-4">
+                        Share your live location instantly with trusted contacts in emergencies.
+                    </p>
+                    <button onclick="shareLocation()"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg shadow-md transition">
+                        Share Location to WhatsApp
+                    </button>
+                </div>
+
+                
+                <div class="bg-white shadow-md rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-3">☎️ Helpline Numbers</h3>
+                    <p class="text-gray-600">Access verified helpline numbers for police, ambulance, and women’s safety.
+                    </p>
+                </div>
+
+              
+                <div class="bg-white shadow-md rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-3">🛡 Safety Resources</h3>
+                    <p class="text-gray-600">Get tips, guides, and resources to ensure safety in daily life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-6">Contact Us</h2>
+            <p class="mb-8 text-gray-600">Have questions or suggestions? Reach out to us!</p>
+            <form class="max-w-xl mx-auto space-y-4">
+                <input type="text" placeholder="Your Name"
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                <input type="email" placeholder="Your Email"
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                <textarea placeholder="Your Message" rows="4"
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+                <button
+                    class="bg-indigo-700 hover:bg-indigo-800 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-indigo-900 text-white py-6 text-center">
+        <p>&copy; 2025 ResQHer. All rights reserved.</p>
+    </footer>
+    <button
+        class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white font-bold text-lg p-5 rounded-full shadow-lg">
+        SOS
+    </button>
+
 </body>
 
 </html>
