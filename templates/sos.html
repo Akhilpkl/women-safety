@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOS Emergency Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #d9534f;
+    }
+    .sos-button {
+      background: #d9534f;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      font-size: 36px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+      margin: 20px auto;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .sos-button:active {
+      transform: scale(0.95);
+    }
+    .contacts button {
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 15px;
+      font-size: 18px;
+      background: #0275d8;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .contacts button:hover {
+      background: #025aa5;
+    }
+    #map {
+      height: 300px;
+      width: 100%;
+      margin-top: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚨 Emergency SOS</h1>
+  <button class="sos-button" onclick="sendSOS()">SOS</button>
+  
+  <h2>Quick Contacts</h2>
+  <div class="contacts">
+    <button onclick="callNumber('100')">📞 Call Police</button>
+    <button onclick="callNumber('7559053358')">📞Family</button>
+    <button onclick="callNumber('1091')">📞 Women Helpline</button>
+  </div>
+
+  <h2>Your Location</h2>
+  <p id="location">Fetching location...</p>
+  <div id="map"></div>
+
+  <script>
+    // Send SOS alert to backend
+    function sendSOS() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          let data = {
+            lat: position.coords.latitude,
+            lon: position.coords.longitude
+          };
+
+          fetch("/send_sos", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+          })
+          .then(res => res.json())
+          .then(response => {
+            alert("🚨 SOS Sent! " + response.message);
+          })
+          .catch(err => console.error(err));
+        });
+      } else {
+        alert("Geolocation not supported!");
+      }
+    }
+
+    // Quick Call
+    function callNumber(number) {
+      window.location.href = `tel:${number}`;
+    }
+
+    // Show map + location
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        document.getElementById("location").innerText = "Geolocation not supported.";
+      }
+    }
+
+    function showPosition(position) {
+      let lat = position.coords.latitude;
+      let lon = position.coords.longitude;
+      document.getElementById("location").innerText = `📍 Latitude: ${lat}, Longitude: ${lon}`;
+
+      // Load OpenStreetMap
+      let map = L.map('map').setView([lat, lon], 15);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker([lat, lon]).addTo(map)
+        .bindPopup("You are here 📍")
+        .openPopup();
+    }
+
+    function showError(error) {
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          document.getElementById("location").innerText = "Permission denied for location.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          document.getElementById("location").innerText = "Location unavailable.";
+          break;
+        case error.TIMEOUT:
+          document.getElementById("location").innerText = "Location request timed out.";
+          break;
+        default:
+          document.getElementById("location").innerText = "Unknown error.";
+      }
+    }
+
+    getLocation();
+  </script>
+
+  <!-- Leaflet Map Library -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</body>
+</html>
