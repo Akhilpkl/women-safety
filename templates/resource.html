@@ -4,252 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Safety Resources - ResQHer</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #f3f4f6 0%, #eef2ff 100%);
-      color: #111;
-    }
-
-    /* Navbar */
-    header {
-      background: #fff;
-      padding: 1rem 4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      color: #5a36d6;
-      font-size: 1.6rem;
-      font-weight: bold;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease, border-bottom 0.3s ease;
-      padding-bottom: 2px;
-    }
-
-    nav a:hover {
-      color: #5a36d6;
-      border-bottom: 2px solid #5a36d6;
-    }
-
-    nav .active {
-      color: #5a36d6;
-      font-weight: 600;
-      border-bottom: 2px solid #5a36d6;
-    }
-
-    /* Safety Resources Header */
-    #resources-header {
-      background: linear-gradient(to right, #1e1b4b, #4338ca);
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem; 
-    }
-
-    #resources-header .header-content {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    #resources-header h1 {
-      font-size: 2.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    #resources-header p {
-      font-size: 1.1rem;
-      font-weight: 400;
-    }
-
-    /* Resources Grid */
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin: 2rem auto;
-      max-width: 1100px;
-      padding: 0 1rem;
-    }
-
-    /* Resource Card */
-    .resource-card {
-      background: #fff;
-      border-radius: 20px;
-      padding: 2rem 1rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      text-align: center;
-      transition: all 0.3s ease;
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .resource-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-    }
-
-    .resource-card span {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .resource-card h3 {
-      margin-bottom: 0.8rem;
-      font-size: 1.25rem;
-      color: #111;
-    }
-
-    .resource-card p {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 1.2rem;
-    }
-
-    .resource-card button {
-      padding: 0.7rem 1.5rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-
-    .sos-btn {
-      background: #e63946;
-      color: #fff;
-    }
-    .sos-btn:hover {
-      background: #c53030;
-    }
-
-    .location-btn {
-      background: #5a36d6;
-      color: #fff;
-    }
-    .location-btn:hover {
-      background: #4329a3;
-    }
-
-    /* Floating SOS */
-    .floating-sos {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #e63946;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .floating-sos:hover {
-      transform: scale(1.1);
-    }
-
-    /* Footer */
-    footer {
-      background: #1e1b4b;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gradient-to-br from-gray-100 to-indigo-50 text-gray-900">
+
   <!-- Navbar -->
-  <header>
-    <h1>ResQHer</h1>
-    <nav>
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resource.html" class="active">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="navbar"></div>
 
   <!-- Safety Resources Header -->
-  <section id="resources-header">
-    <div class="header-content">
-      <h1>Safety Resources</h1>
-      <p>Quick access to essential safety tools & guides</p>
+  <section class="bg-gradient-to-r from-indigo-950 to-indigo-600 text-white flex items-center justify-center text-center h-64 px-4">
+    <div class="max-w-2xl">
+      <h1 class="text-5xl font-bold mb-2">Safety Resources</h1>
+      <p class="text-2xl">Quick access to essential safety tools & guides</p>
     </div>
   </section>
 
+
   <!-- Resources Grid -->
-  <section class="resources-grid">
-    <div class="resource-card">
-      <span>🚨</span>
-      <h3>Emergency Actions</h3>
-      <button class="sos-btn">Trigger SOS</button>
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto my-12 px-6">
+    <!-- Card -->
+    <div class="bg-white rounded-2xl p-14 shadow-md hover:shadow-xl text-center transition transform hover:-translate-y-1">
+      <span class="text-4xl mb-6 block">🚨</span>
+      <h3 class="text-lg font-semibold mb-4">Emergency Actions</h3>
+      <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg">Trigger SOS</button>
     </div>
-    <div class="resource-card">
-      <span>🚍</span>
-      <h3>Travel Safety</h3>
-      <button class="location-btn">Share Location</button>
+
+    <div class="bg-white rounded-2xl p-14 shadow-md hover:shadow-xl text-center transition transform hover:-translate-y-1">
+      <span class="text-4xl mb-6 block">🚍</span>
+      <h3 class="text-lg font-semibold mb-4">Travel Safety</h3>
+      <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg">Share Location</button>
     </div>
-    <div class="resource-card">
-      <span>🌐</span>
-      <h3>Digital Security</h3>
-      <p>Tips for safe online behavior & data protection.</p>
+
+    <div class="bg-white rounded-2xl p-14 shadow-md hover:shadow-xl text-center transition transform hover:-translate-y-1">
+      <span class="text-4xl mb-6 block">🌐</span>
+      <h3 class="text-lg font-semibold mb-4">Digital Security</h3>
+      <p class="text-gray-600 text-sm">Tips for safe online behavior & data protection.</p>
     </div>
-    <div class="resource-card">
-      <span>🤝</span>
-      <h3>Community Support</h3>
-      <p>Connect with NGOs & trusted networks.</p>
+
+    <div class="bg-white rounded-2xl p-14 shadow-md hover:shadow-xl text-center transition transform hover:-translate-y-1">
+      <span class="text-4xl mb-6 block">🤝</span>
+      <h3 class="text-lg font-semibold mb-4">Community Support</h3>
+      <p class="text-gray-600 text-sm">Connect with NGOs & trusted networks.</p>
     </div>
-    <div class="resource-card">
-      <span>🧘</span>
-      <h3>Mental Wellbeing</h3>
-      <p>Stress & self-care resources.</p>
+
+    <div class="bg-white rounded-2xl p-14 shadow-md hover:shadow-xl text-center transition transform hover:-translate-y-1">
+      <span class="text-4xl mb-6 block">🧘</span>
+      <h3 class="text-lg font-semibold mb-4">Mental Wellbeing</h3>
+      <p class="text-gray-600 text-sm">Stress & self-care resources.</p>
     </div>
-    <div class="resource-card">
-      <span>🛡</span>
-      <h3>Tools & Gadgets</h3>
-      <p>Explore safety apps & wearables.</p>
+
+    <div class="bg-white rounded-2xl p-14 shadow-md hover:shadow-xl text-center transition transform hover:-translate-y-1">
+      <span class="text-4xl mb-6 block">🛡</span>
+      <h3 class="text-lg font-semibold mb-4">Tools & Gadgets</h3>
+      <p class="text-gray-600 text-sm">Explore safety apps & wearables.</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="bg-indigo-950 text-white text-center py-6 mt-10">
     <p>&copy; 2025 ResQHer. All rights reserved.</p>
   </footer>
 
   <!-- Floating SOS Button -->
-  <button class="floating-sos">SOS</button>
+  <button class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full w-14 h-14 shadow-lg transition transform hover:scale-110">
+    SOS
+  </button>
+
+  <!-- Load Navbar -->
+  <script>
+    fetch("navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading navbar:", error));
+  </script>
 </body>
 </html>

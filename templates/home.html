@@ -16,17 +16,9 @@
 <body class="font-sans bg-gray-50 text-gray-800">
 
     <!-- Header -->
-    <header class="fixed w-full bg-white shadow-md z-50">
-        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-            <h1 class="text-2xl font-bold text-indigo-700">ResQHer</h1>
-            <ul class="flex space-x-6 font-medium">
-                <li><a href="#home" class="hover:text-indigo-600">Home</a></li>
-                <li><a href="#about" class="hover:text-indigo-600">About</a></li>
-                <li><a href="resource.html" class="hover:text-indigo-600">Resources</a></li>
-                <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Navbar will be loaded here -->
+<div id="navbar"></div>
+
 
     <!-- Hero Section -->
     <section id="home" class="pt-32 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white text-center px-6 py-20">
@@ -143,6 +135,15 @@
         class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white font-bold text-lg p-5 rounded-full shadow-lg">
         SOS
     </button>
+    <script>
+  fetch("navbar.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading navbar:", error));
+</script>
+
 
 </body>
 
