@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpline Numbers - ResQHer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold text-indigo-700">ResQHer</h1>
+            <ul class="flex space-x-6 font-medium">
+                <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+                <li><a href="index.html#about" class="hover:text-indigo-600">About</a></li>
+                <li><a href="index.html#resources" class="hover:text-indigo-600">Resources</a></li>
+                
+                <li><a href="index.html#contact" class="hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 bg-gradient-to-r from-indigo-900 to-indigo-700 text-white text-center px-6 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Emergency Helpline Numbers</h1>
+        <p class="text-lg md:text-xl mb-6">
+            Immediate access to verified emergency contacts and support services
+        </p>
+        <div class="max-w-2xl mx-auto bg-white/10 backdrop-blur-sm rounded-xl p-6">
+            <p class="text-lg mb-4">In case of emergency, call these numbers directly or use our one-tap calling feature</p>
+            <p class="text-sm opacity-80">All numbers are verified and available 24/7</p>
+        </div>
+    </section>
+
+    <!-- Emergency Contacts Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-10 text-center">Emergency Contacts</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Police -->
+                <div class="bg-red-50 border-l-4 border-red-500 rounded-lg p-6 shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <span class="text-red-600 text-xl">🚓</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Police</h3>
+                            <p class="text-gray-600">Emergency response</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="tel:100" class="block text-2xl font-bold text-red-700 mb-2">100</a>
+                        <p class="text-sm text-gray-500">Available nationwide</p>
+                    </div>
+                    <button onclick="callNumber('100')" class="mt-4 w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg transition flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Call Now
+                    </button>
+                </div>
+                
+                <!-- Women's Helpline -->
+                <div class="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-6 shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <span class="text-purple-600 text-xl">👩</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Women's Helpline</h3>
+                            <p class="text-gray-600">Domestic abuse & violence</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="tel:1091" class="block text-2xl font-bold text-purple-700 mb-2">1091</a>
+                        <p class="text-sm text-gray-500">All India Women Helpline</p>
+                    </div>
+                    <button onclick="callNumber('1091')" class="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg transition flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Call Now
+                    </button>
+                </div>
+                
+                <!-- Ambulance -->
+                <div class="bg-green-50 border-l-4 border-green-500 rounded-lg p-6 shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <span class="text-green-600 text-xl">🚑</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Ambulance</h3>
+                            <p class="text-gray-600">Medical emergency</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="tel:108" class="block text-2xl font-bold text-green-700 mb-2">108</a>
+                        <p class="text-sm text-gray-500">Emergency medical service</p>
+                    </div>
+                    <button onclick="callNumber('108')" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Call Now
+                    </button>
+                </div>
+                
+                <!-- Disaster Management -->
+                <div class="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-6 shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <span class="text-blue-600 text-xl">🌪</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Disaster Management</h3>
+                            <p class="text-gray-600">Natural calamities</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="tel:108" class="block text-2xl font-bold text-blue-700 mb-2">108</a>
+                        <p class="text-sm text-gray-500">Also used for disaster management</p>
+                    </div>
+                    <button onclick="callNumber('108')" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Call Now
+                    </button>
+                </div>
+                
+                <!-- Child Emergency -->
+                <div class="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-amber-100 p-3 rounded-full mr-4">
+                            <span class="text-amber-600 text-xl">🧒</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Child Emergency</h3>
+                            <p class="text-gray-600">Child abuse & protection</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="tel:1098" class="block text-2xl font-bold text-amber-700 mb-2">1098</a>
+                        <p class="text-sm text-gray-500">Childline India Foundation</p>
+                    </div>
+                    <button onclick="callNumber('1098')" class="mt-4 w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg transition flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Call Now
+                    </button>
+                </div>
+                
+                <!-- Mental Health -->
+                <div class="bg-teal-50 border-l-4 border-teal-500 rounded-lg p-6 shadow-md">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-teal-100 p-3 rounded-full mr-4">
+                            <span class="text-teal-600 text-xl">🧠</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold">Mental Health</h3>
+                            <p class="text-gray-600">Counselling & support</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <a href="tel:08046110007" class="block text-2xl font-bold text-teal-700 mb-2">08046110007</a>
+                        <p class="text-sm text-gray-500">Vandrevala Foundation Helpline</p>
+                    </div>
+                    <button onclick="callNumber('08046110007')" class="mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-lg transition flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Call Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Helplines Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-10 text-center">Regional Helplines</h2>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-indigo-50">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-indigo-700 uppercase tracking-wider">State/UT</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-indigo-700 uppercase tracking-wider">Women Helpline</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-indigo-700 uppercase tracking-wider">Police</th>
+                                <th class="px-6 py-4 text-left text-xs font-medium text-indigo-700 uppercase tracking-wider">Ambulance</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Delhi</td>
+                                <td class="px-6 py-4 whitespace-nowrap">1091</td>
+                                <td class="px-6 py-4 whitespace-nowrap">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap">102</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Mumbai</td>
+                                <td class="px-6 py-4 whitespace-nowrap">103</td>
+                                <td class="px-6 py-4 whitespace-nowrap">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap">102</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Kolkata</td>
+                                <td class="px-6 py-4 whitespace-nowrap">1091</td>
+                                <td class="px-6 py-4 whitespace-nowrap">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap">102</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Chennai</td>
+                                <td class="px-6 py-4 whitespace-nowrap">1091</td>
+                                <td class="px-6 py-4 whitespace-nowrap">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap">108</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Bangalore</td>
+                                <td class="px-6 py-4 whitespace-nowrap">1091</td>
+                                <td class="px-6 py-4 whitespace-nowrap">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap">108</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap font-medium">Kerala</td>
+                                <td class="px-6 py-4 whitespace-nowrap">1091</td>
+                                <td class="px-6 py-4 whitespace-nowrap">100</td>
+                                <td class="px-6 py-4 whitespace-nowrap">108</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-indigo-50 p-6 rounded-xl">
+                <h3 class="text-xl font-semibold text-indigo-700 mb-4">Kerala Specific Helplines</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium text-indigo-600 mb-2">Women's Commission Helpline</h4>
+                        <p class="text-gray-700">📞 <a href="tel:04712323230" class="text-indigo-700 hover:underline">0471-2323230</a></p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-indigo-600 mb-2">Kerala Police Women Cell</h4>
+                        <p class="text-gray-700">📞 <a href="tel:1090" class="text-indigo-700 hover:underline">1090</a> (Toll Free)</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-indigo-600 mb-2">Disaster Management (Kerala)</h4>
+                        <p class="text-gray-700">📞 <a href="tel:1077" class="text-indigo-700 hover:underline">1077</a> (State Emergency)</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-indigo-600 mb-2">Highway Alert (Kerala)</h4>
+                        <p class="text-gray-700">📞 <a href="tel:9846100100" class="text-indigo-700 hover:underline">98461 00100</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-600 mt-6">Note: These are general helpline numbers. Local numbers may vary.</p>
+        </div>
+    </section>
+
+    <!-- Important Tips Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-10 text-center">Emergency Preparedness Tips</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-indigo-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-indigo-700 mb-4">📞 Before You Call</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Stay calm and take a deep breath</li>
+                        <li>Know your location or nearby landmarks</li>
+                        <li>Have important details ready (nature of emergency, number of people involved)</li>
+                        <li>If unsafe to speak, call and leave the line open</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-xl">
+                    <h3 class="text-xl font-semibold text-green-700 mb-4">🆘 During an Emergency</h3>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Speak clearly and slowly to the operator</li>
+                        <li>Follow instructions carefully</li>
+                        <li>If possible, move to a safe location while waiting for help</li>
+                        <li>Keep your phone accessible and charged</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-900 text-white py-6 text-center">
+        <p>&copy; 2025 ResQHer. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating SOS Button -->
+    <button class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white font-bold text-lg p-5 rounded-full shadow-lg">
+        SOS
+    </button>
+
+    <script>
+        // Function to initiate phone calls
+        function callNumber(number) {
+            window.location.href = 'tel:' + number;
+        }
+        
+        // Function to share location via WhatsApp
+        function shareLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    const message = `Emergency! My current location is: https://maps.google.com/?q=${latitude},${longitude}`;
+                    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
